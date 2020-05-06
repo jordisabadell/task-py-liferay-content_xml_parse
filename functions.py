@@ -1,18 +1,16 @@
 import os
 import codecs
+import xml.etree.ElementTree as ET
 
 def loadFile(fileName, ignoreHeaderRow):
 
     #read file
     file = open(fileName, "r", encoding="utf8")
 
-    if ignoreHeaderRow:
-        file.readline()
-
     #iterate lines
     items = []
     for i, line in enumerate(file):
-        if i>0:
+        if (ignoreHeaderRow and i>0) or (not ignoreHeaderRow):
             if line:
                 #convert line to array of elements
                 item = []
@@ -41,3 +39,22 @@ def saveFile(fileName, items):
 def getHeaderRow(fileName):
     file = open(fileName, "r", encoding="utf8")
     return file.readline().replace("\n", "").split("\t")
+
+
+def xmlParseName(root, locale):
+    
+    value = ''
+    
+    if root:
+        #check if exist locale
+        locales = root.get('available-locales')
+        if not locale in locales:
+            locale = root.get("default-locale") #otherwise, get default local
+        
+        nodes = root.findall(".//Name/[@language-id='" + locale +"']")
+        if nodes and len(nodes)>=1:
+            value = nodes[0].text #first node
+        
+    return value
+
+    
