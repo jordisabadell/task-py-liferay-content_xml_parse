@@ -3,7 +3,6 @@ import xml.etree.ElementTree as ET
 from functions import loadFile, saveFile, getHeaderRow, xmlParseName
 
 #ARGUMENTS
-#example: py main.py --inputfile c:/tmp/pages_sorted.csv --column 3 --ignoreheaderrow
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--inputfile', dest='input_file', 
     help='Input file name.', type=str, required=True)
