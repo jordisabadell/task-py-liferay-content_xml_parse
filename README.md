@@ -1,6 +1,6 @@
 # Parse XML content column on CSV file
 
-Given a CSV file with XML content column, this task gets the value of it by locale.
+Given a CSV file (delimited by tabulates) with XML content column, this task gets the value of it by locale.
 
 I use it, for example, to get value of XML content on Liferay database tables (version CE 6.1).
 
