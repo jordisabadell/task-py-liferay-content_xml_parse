@@ -5,7 +5,7 @@ Given a CSV file with XML content column, this task gets the value of it by loca
 I use it, for example, to get value of XML content on Liferay database tables (version CE 6.1).
 
 ```xml
-<?xml version='1.0' encoding='UTF-8'?><root available-locales="ca_ES,es_ES,en_GB," default-locale="ca_ES"><Name languageid="ca_ES">Voluptua</Name><Name languageid="es_ES">Dolores</Name><Name languageid="en_GB">Et</Name></root>
+<?xml version='1.0' encoding='UTF-8'?><root available-locales="ca_ES,es_ES,en_GB," default-locale="ca_ES"><Name language-id="ca_ES">Voluptua</Name><Name language-id="es_ES">Dolores</Name><Name language-id="en_GB">Et</Name></root>
 ```
 
 If locale doesn't exist, it takes the 'default-locale'. For example, if you want 'en_GB' name and it doesn't exist, the task will return 'ca_ES' name.
@@ -31,11 +31,11 @@ If locale doesn't exist, it takes the 'default-locale'. For example, if you want
 
 | plid    | layoutId | parentLayoutId | name                                                                                                                                                                                                                                    | priority |
 |---------|----------|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| 7004446 | 74       | 1              | `<?xml version='1.0' encoding='UTF-8'?><root available-locales="ca_ES,es_ES,en_GB," default-locale="ca_ES"><Name languageid="ca_ES">Invidunt</Name><Name languageid="es_ES">Diam</Name><Name languageid="en_GB">Voluptua</Name></root>` | 15       |
-| 8152170 | 205      | 1              | `<?xml version='1.0' encoding='UTF-8'?><root available-locales="ca_ES" default-locale="ca_ES"><Name languageid="ca_ES">Labore</Name></root>`                                                                                            | 10       |
-| 6724205 | 1        | 0              | `<?xml version='1.0' encoding='UTF-8'?><root available-locales="ca_ES,es_ES,en_GB," default-locale="ca_ES"><Name languageid="ca_ES">Diam</Name><Name languageid="es_ES">Magna</Name><Name languageid="en_GB">Aliquyam</Name></root>`    | 0        |
-| 8152195 | 206      | 205            | `<?xml version='1.0' encoding='UTF-8'?><root available-locales="ca_ES,es_ES" default-locale="ca_ES"><Name languageid="ca_ES">Nonumy</Name><Name languageid="es_ES">Aliquyam</Name></root>`                                              | 0        |
-| 8220383 | 222      | 205            | `<?xml version='1.0' encoding='UTF-8'?><root available-locales="ca_ES,es_ES,en_GB," default-locale="ca_ES"><Name languageid="ca_ES">Consetetur</Name><Name languageid="es_ES">Ut</Name><Name languageid="en_GB">Labore</Name></root>`   | 1        |
+| 7004446 | 74       | 1              | `<?xml version='1.0' encoding='UTF-8'?><root available-locales="ca_ES,es_ES,en_GB," default-locale="ca_ES"><Name language-id="ca_ES">Invidunt</Name><Name language-id="es_ES">Diam</Name><Name language-id="en_GB">Voluptua</Name></root>` | 15       |
+| 8152170 | 205      | 1              | `<?xml version='1.0' encoding='UTF-8'?><root available-locales="ca_ES" default-locale="ca_ES"><Name language-id="ca_ES">Labore</Name></root>`                                                                                            | 10       |
+| 6724205 | 1        | 0              | `<?xml version='1.0' encoding='UTF-8'?><root available-locales="ca_ES,es_ES,en_GB," default-locale="ca_ES"><Name language-id="ca_ES">Diam</Name><Name language-id="es_ES">Magna</Name><Name language-id="en_GB">Aliquyam</Name></root>`    | 0        |
+| 8152195 | 206      | 205            | `<?xml version='1.0' encoding='UTF-8'?><root available-locales="ca_ES,es_ES" default-locale="ca_ES"><Name language-id="ca_ES">Nonumy</Name><Name language-id="es_ES">Aliquyam</Name></root>`                                              | 0        |
+| 8220383 | 222      | 205            | `<?xml version='1.0' encoding='UTF-8'?><root available-locales="ca_ES,es_ES,en_GB," default-locale="ca_ES"><Name language-id="ca_ES">Consetetur</Name><Name language-id="es_ES">Ut</Name><Name language-id="en_GB">Labore</Name></root>`   | 1        |
 
 ### Output file
 
@@ -47,6 +47,6 @@ If locale doesn't exist, it takes the 'default-locale'. For example, if you want
 | 8152195 | 206      | 205            | Nonumy     | 0        |
 | 8220383 | 222      | 205            | Consetetur | 1        |
 
-## Improvements
+## Next steps
 
 - Add possibility to indicate CSV delimiter by call parameter.
