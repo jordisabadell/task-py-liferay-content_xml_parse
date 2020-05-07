@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 from functions import loadFile, saveFile, getHeaderRow, xmlParseName
 
 #ARGUMENTS
-parser = argparse.ArgumentParser(description='')
+parser = argparse.ArgumentParser(description='Given a CSV file with XML content column, this task gets the value of it by locale.')
 parser.add_argument('--inputfile', dest='input_file', 
     help='Input file name.', type=str, required=True)
 parser.add_argument('--outputfile', dest='output_file', 
