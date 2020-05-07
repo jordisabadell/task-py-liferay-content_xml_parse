@@ -3,6 +3,8 @@ import codecs
 import xml.etree.ElementTree as ET
 
 def loadFile(fileName, ignoreHeaderRow):
+    '''
+    '''
 
     #read file
     file = open(fileName, "r", encoding="utf8")
@@ -22,7 +24,10 @@ def loadFile(fileName, ignoreHeaderRow):
     
     return items
 
+
 def saveFile(fileName, items):
+    '''
+    '''
 
     #remove file if exists
     if os.path.exists(fileName):
@@ -36,15 +41,21 @@ def saveFile(fileName, items):
 
     return True
 
+
 def getHeaderRow(fileName):
+    '''
+    '''
+
     file = open(fileName, "r", encoding="utf8")
     return file.readline().replace("\n", "").split("\t")
 
 
 def xmlParseName(root, locale):
+    '''
+    '''
     
     value = ''
-    
+
     if root:
         #check if exist locale
         locales = root.get('available-locales')
@@ -55,6 +66,4 @@ def xmlParseName(root, locale):
         if nodes and len(nodes)>=1:
             value = nodes[0].text #first node
         
-    return value
-
-    
+    return value    
