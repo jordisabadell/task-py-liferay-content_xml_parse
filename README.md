@@ -27,7 +27,7 @@ If locale doesn't exist, it takes the 'default-locale'. For example, if you want
 
 > py main.py --inputfile example/pages_sorted.csv --column 3 --ignoreheaderrow
 
-### Input file example (see /example/pages.csv)
+### Input file example
 
 | plid    | layoutId | parentLayoutId | name                                                                                                                                                                                                                                    | priority |
 |---------|----------|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
